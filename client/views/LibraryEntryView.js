@@ -7,18 +7,7 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
-      //if no song is playing
-      console.log(model.get('currentSong'));
-      if(this.model.get('currentSong') === this) {
-        this.model.enqueue();
-        console.log('This is working');
-      } else {
-        this.model.play();
-      }
-      
-      //or if another song is playing
-
-        //enqueue instead
+      this.model.enqueue();
     }
   },
 
