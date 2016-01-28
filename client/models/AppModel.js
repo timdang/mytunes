@@ -27,8 +27,8 @@ var AppModel = Backbone.Model.extend({
     }, this);
 
     params.library.on('ended', function(song) {
-      this.get('songQueue').remove(song);
-      this.get('songQueue').playFirst();
+      this.get('songQueue').remove(song); //tell AppView to remove song from queue
+      this.get('songQueue').playFirst(); //plays next song
     }, this);
   }
 
