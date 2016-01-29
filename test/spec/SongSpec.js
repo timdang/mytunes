@@ -5,9 +5,18 @@ describe('SongModel', function() {
     model = new SongModel({
       artist: 'data',
       url: '/test/testsong.mp3',
-      title:'test song'
+      title:'test song',
+      playcount: 0
     });
     sinon.spy(model, 'trigger');
+  });
+
+  describe('awesome playcount', function(){
+    it('increments the playcount', function() {
+      model.play();
+      model.play();
+      expect(model.get('playcount')).to.equal(2);
+    });
   });
 
   describe('play', function() {
